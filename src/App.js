@@ -5,11 +5,12 @@ import MovieList from './components/MovieList';
 import Movie from './components/Movie';
 
 import MovieHeader from './components/MovieHeader';
-
+import AddMovieForm from "./components/AddMovieForm";
 import FavoriteMovieList from './components/FavoriteMovieList';
 
 import axios from 'axios';
 import EditMovieForm from "./components/EditMovieForm";
+import AddMovieForm from "./components/AddMovieForm";
 
 const App = (props) => {
   const [movies, setMovies] = useState([]);
@@ -55,6 +56,12 @@ return item.id !== Number(id)
             <Route path="/movies/edit/:id">
               <EditMovieForm />
             </Route>
+
+            <Route path="/movies/add">
+              <AddMovieForm/>
+            </Route>
+
+
 
             <Route path="/movies/:id">
               <Movie deleteMovie = {deleteMovie}/>
