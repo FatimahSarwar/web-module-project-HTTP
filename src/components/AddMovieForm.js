@@ -39,10 +39,16 @@ const AddMovieForm = (props) => {
 		// 	.catch(err=>{
 		// 		console.log(err);
 		// 	})
+axios.post(`http:localhost:9000/api/movies`)
+.then(res =>{
+    props.setMovies(res.data)
+push('/movies')
+})
+.catch(err =>{
 
+    console.log(err)
+})
 
-
-        
 	}
 	
 	const { title, director, genre, metascore, description } = movie;
